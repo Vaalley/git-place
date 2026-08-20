@@ -7,4 +7,5 @@
   </defs>
   <rect width="640" height="640" fill="#0d1117"/>
   <rect width="640" height="640" fill="url(#grid)"/>
+  <rect x="100" y="200" width="10" height="10" fill="#ff8800"/>
 </svg>

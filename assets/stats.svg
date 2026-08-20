@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 30">
-  <rect width="460" height="30" fill="#0d1117"/>
-  <text x="10" y="20" fill="#f0f6fc" font-family="monospace" font-size="13">git-place leaderboard — 0 pixels painted</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 52">
+  <rect width="460" height="52" fill="#0d1117"/>
+  <text x="10" y="20" fill="#f0f6fc" font-family="monospace" font-size="13">git-place leaderboard — 1 pixels painted</text>
+  <text x="10" y="45" fill="#f0f6fc" font-family="monospace" font-size="13">1. Vaalley</text>
+  <rect x="170" y="35" width="200" height="12" fill="#1f6feb"/>
+  <text x="390" y="45" fill="#f0f6fc" font-family="monospace" font-size="13">1</text>
 </svg>
