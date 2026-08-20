@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 74">
   <rect width="460" height="74" fill="#0d1117"/>
-  <text x="10" y="20" fill="#f0f6fc" font-family="monospace" font-size="13">git-place leaderboard — 3 pixels painted</text>
-  <text x="10" y="45" fill="#f0f6fc" font-family="monospace" font-size="13">1. kernel-smoke</text>
+  <text x="10" y="20" fill="#f0f6fc" font-family="monospace" font-size="13">git-place leaderboard — 4 pixels painted</text>
+  <text x="10" y="45" fill="#f0f6fc" font-family="monospace" font-size="13">1. Vaalley</text>
   <rect x="170" y="35" width="200" height="12" fill="#1f6feb"/>
   <text x="390" y="45" fill="#f0f6fc" font-family="monospace" font-size="13">2</text>
-  <text x="10" y="67" fill="#f0f6fc" font-family="monospace" font-size="13">2. Vaalley</text>
-  <rect x="170" y="57" width="100" height="12" fill="#1f6feb"/>
-  <text x="390" y="67" fill="#f0f6fc" font-family="monospace" font-size="13">1</text>
+  <text x="10" y="67" fill="#f0f6fc" font-family="monospace" font-size="13">2. kernel-smoke</text>
+  <rect x="170" y="57" width="200" height="12" fill="#1f6feb"/>
+  <text x="390" y="67" fill="#f0f6fc" font-family="monospace" font-size="13">2</text>
 </svg>
