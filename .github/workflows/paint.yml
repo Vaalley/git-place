@@ -1,0 +1,57 @@
+name: paint
+
+'on':
+  issues:
+    types: [opened, edited]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  apply:
+    if: startsWith(github.event.issue.title, '[paint]') || startsWith(github.event.issue.title, '[sync]')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Apply issue to state
+        id: apply
+        env:
+          TITLE: ${{ github.event.issue.title }}
+          BODY: ${{ github.event.issue.body }}
+          AUTHOR: ${{ github.event.issue.user.login }}
+          CREATED: ${{ github.event.issue.created_at }}
+        run: |
+          node scripts/apply-issue.js --repo . --title "$TITLE" --body "$BODY" --author "$AUTHOR" --created "$CREATED" | tee result.json
+          echo "comment=$(jq -r '.comment' result.json)" >> "$GITHUB_OUTPUT"
+
+      - name: Render assets
+        run: node scripts/render.js .
+
+      - name: Commit and push
+        env:
+          TITLE: ${{ github.event.issue.title }}
+        run: |
+          git config user.name git-place-bot
+          git config user.email bot@users.noreply.github.com
+          git add state/ assets/
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "place: $TITLE"
+            git push
+          fi
+
+      - name: Comment and close issue
+        uses: actions/github-script@v7
+        env:
+          COMMENT: ${{ steps.apply.outputs.comment }}
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const issue_number = context.payload.issue.number;
+            await github.rest.issues.createComment({ owner, repo, issue_number, body: process.env.COMMENT });
+            await github.rest.issues.update({ owner, repo, issue_number, state: 'closed' });
