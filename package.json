@@ -1,0 +1,6 @@
+{
+  "name": "git-place",
+  "private": true,
+  "type": "module",
+  "description": "A perpetual pixel canvas whose permanent record is a git repo. CRDT state, issue-driven writes, WebRTC live layer."
+}
