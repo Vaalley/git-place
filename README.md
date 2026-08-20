@@ -43,14 +43,16 @@ time — no server. The host (or anyone, for solo painting) hits **Publish** to
 persist the session buffer: it opens a pre-filled `[sync]` issue, and the Action
 merges it into the permanent record.
 
-## Setup
+Live canvas: **https://vaalley.github.io/git-place/site/**
+
+## Setup (for forks)
 
 1. Push this repo to GitHub.
 2. Settings → Pages → deploy from branch `main`, root `/` (client is at `/site/`).
 3. Settings → Actions → General → Workflow permissions: **Read and write**
    (the workflow commits the board back).
-4. Replace `YOUR-USER/git-place` defaults: pass `?repo=owner/repo` to `/site/`
-   or let the client prompt once.
+4. The client resolves the repo automatically on Pages; elsewhere pass
+   `?repo=owner/repo` or let it prompt once.
 
 ## Layout
 
